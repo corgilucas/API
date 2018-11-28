@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MUKBANG - Have Food Have Fun</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/design.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  </head>
+<body>
+
+{{> navbar}}
+
+<style>
+input {
+	margin-top:30px;
+	width:200px;
+	height:40px;
+	font-size: 15px;
+	border-radius:5px;
+	border: none;
+}
+</style>
+<div class="jumbotron text-center">
+  <h1>Search Page</h1>
+  <p>For searching places of interest</p>
+</div>
+<center>
+<div class="row container text-center">
+  <div class="col-sm-12">
+    <form id="form" action="/" method="post">
+      <div class="form-group">
+        <label for="addr">Location:</label>
+        <input id="addr" name="address" class="form-control" type="text" placeholder="Enter your prefered area"/>
+        <p></p>
+        <label for="name">Keyword:</label>
+        <input id="name" name="name" class="form-control" type="text" placeholder="Enter name"/>
+        <p></p>
+        <label for="places-type">Looking for:</label>
+        <p></p>
+          <select id="places-type" name="placetype" class="form-control">
+            {{> scrollablelist}}
+          </select>
+        <p></p>
+        <input type="submit" value="Find" formaction="/getplaces" name="button"/>
+      </div>
+    </form>
+  </div>
+</div>
+</center>
+
+</body>
+</html>
